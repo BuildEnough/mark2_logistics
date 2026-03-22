@@ -17,4 +17,13 @@ public class ProductService {
     public ProductDto getProductById(Integer productId) {
         return productMapper.findById(productId);
     }
+
+    public ProductDto createProduct(ProductCreateRequest request) {
+        if (request.getUseYn() == null || request.getUseYn().isBlank()) {
+            request.setUseYn("Y");
+        }
+
+        productMapper.insertProduct(request);
+        return productMapper.findById(request.getProductId());
+    }
 }

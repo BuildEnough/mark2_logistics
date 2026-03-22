@@ -1,10 +1,8 @@
 package com.buildenough.logistics.product;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,10 @@ public class ProductController {
     @GetMapping("/{productId}")
     public ProductDto getProductById(@PathVariable Integer productId) {
         return productService.getProductById(productId);
+    }
+
+    @PostMapping
+    public ProductDto createProduct(@Valid @RequestBody ProductCreateRequest request) {
+        return productService.createProduct(request);
     }
 }

@@ -35,4 +35,26 @@
         WHERE product_id = #{productId}
     </select>
 
+    <insert id="insertProduct"
+            parameterType="com.buildenough.logistics.product.ProductCreateRequest"
+            useGeneratedKeys="true"
+            keyProperty="productId">
+        INSERT INTO products (
+            product_code,
+            product_name,
+            specification,
+            unit,
+            price,
+            use_yn
+        ) VALUES (
+                     #{productCode},
+                     #{productName},
+                     #{specification},
+                     #{unit},
+                     #{price},
+                     #{useYn}
+                 )
+    </insert>
+
+
 </mapper>
