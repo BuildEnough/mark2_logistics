@@ -20,4 +20,19 @@
         ORDER BY product_id DESC
     </select>
 
+    <select id="findById" parameterType="int" resultType="com.buildenough.logistics.product.ProductDto">
+        SELECT
+            product_id AS productId,
+            product_code AS productCode,
+            product_name AS productName,
+            specification,
+            unit,
+            price,
+            use_yn AS useYn,
+            created_at AS createdAt,
+            updated_at AS updatedAt
+        FROM products
+        WHERE product_id = #{productId}
+    </select>
+
 </mapper>

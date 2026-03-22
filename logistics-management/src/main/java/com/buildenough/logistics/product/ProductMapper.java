@@ -7,4 +7,6 @@ import java.util.List;
 @Mapper
 public interface ProductMapper {
     List<ProductDto> findAll();
+
+    ProductDto findById(Integer productId);
 }

@@ -13,4 +13,8 @@ public class ProductService {
     public List<ProductDto> getProducts() {
         return productMapper.findAll();
     }
+
+    public ProductDto getProductById(Integer productId) {
+        return productMapper.findById(productId);
+    }
 }
