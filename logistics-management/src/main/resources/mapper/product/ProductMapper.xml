@@ -67,5 +67,11 @@
         WHERE product_id = #{productId}
     </update>
 
+    <update id="deactivateProduct">
+        UPDATE products
+        SET
+            use_yn = 'N'
+        WHERE product_id = #{productId}
+    </update>
 
 </mapper>

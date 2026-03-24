@@ -15,4 +15,6 @@ public interface ProductMapper {
 
     int updateProduct(@Param("productId") Integer productId,
                       @Param("request") ProductUpdateRequest request);
+
+    int deactivateProduct(Integer productId);
 }

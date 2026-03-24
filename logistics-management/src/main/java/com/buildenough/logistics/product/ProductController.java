@@ -32,4 +32,9 @@ public class ProductController {
                                     @Valid @RequestBody ProductUpdateRequest request) {
         return productService.updateProduct(productId, request);
     }
+
+    @PatchMapping("/{productId}/deactivate")
+    public ProductDto deactivateProduct(@PathVariable Integer productId) {
+        return productService.deactivateProduct(productId);
+    }
 }

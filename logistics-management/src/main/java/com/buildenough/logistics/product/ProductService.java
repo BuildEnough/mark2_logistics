@@ -31,4 +31,9 @@ public class ProductService {
         productMapper.updateProduct(productId, request);
         return productMapper.findById(productId);
     }
+
+    public ProductDto deactivateProduct(Integer productId) {
+        productMapper.deactivateProduct(productId);
+        return productMapper.findById(productId);
+    }
 }
