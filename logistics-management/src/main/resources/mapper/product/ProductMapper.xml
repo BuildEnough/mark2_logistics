@@ -56,5 +56,16 @@
                  )
     </insert>
 
+    <update id="updateProduct">
+        UPDATE products
+        SET
+            product_name = #{request.productName},
+            specification = #{request.specification},
+            unit = #{request.unit},
+            price = #{request.price},
+            use_yn = #{request.useYn}
+        WHERE product_id = #{productId}
+    </update>
+
 
 </mapper>

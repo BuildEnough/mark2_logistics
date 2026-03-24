@@ -26,4 +26,10 @@ public class ProductController {
     public ProductDto createProduct(@Valid @RequestBody ProductCreateRequest request) {
         return productService.createProduct(request);
     }
+
+    @PutMapping("/{productId}")
+    public ProductDto updateProduct(@PathVariable Integer productId,
+                                    @Valid @RequestBody ProductUpdateRequest request) {
+        return productService.updateProduct(productId, request);
+    }
 }

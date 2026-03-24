@@ -26,4 +26,9 @@ public class ProductService {
         productMapper.insertProduct(request);
         return productMapper.findById(request.getProductId());
     }
+
+    public ProductDto updateProduct(Integer productId, ProductUpdateRequest request) {
+        productMapper.updateProduct(productId, request);
+        return productMapper.findById(productId);
+    }
 }

@@ -1,6 +1,7 @@
 package com.buildenough.logistics.product;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,4 +12,7 @@ public interface ProductMapper {
     ProductDto findById(Integer productId);
 
     int insertProduct(ProductCreateRequest request);
+
+    int updateProduct(@Param("productId") Integer productId,
+                      @Param("request") ProductUpdateRequest request);
 }
