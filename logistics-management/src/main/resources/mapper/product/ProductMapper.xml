@@ -5,7 +5,38 @@
 
 <mapper namespace="com.buildenough.logistics.product.ProductMapper">
 
-    <select id="findAll" resultType="com.buildenough.logistics.product.ProductDto">
+<!--    <select id="findAll" resultType="com.buildenough.logistics.product.ProductDto">-->
+<!--        SELECT-->
+<!--            product_id AS productId,-->
+<!--            product_code AS productCode,-->
+<!--            product_name AS productName,-->
+<!--            specification,-->
+<!--            unit,-->
+<!--            price,-->
+<!--            use_yn AS useYn,-->
+<!--            created_at AS createdAt,-->
+<!--            updated_at AS updatedAt-->
+<!--        FROM products-->
+<!--        ORDER BY product_id DESC-->
+<!--    </select>-->
+
+    <select id="findActiveProducts" resultType="com.buildenough.logistics.product.ProductDto">
+        SELECT
+            product_id AS productId,
+            product_code AS productCode,
+            product_name AS productName,
+            specification,
+            unit,
+            price,
+            use_yn AS useYn,
+            created_at AS createdAt,
+            updated_at AS updatedAt
+        FROM products
+        WHERE use_yn = 'Y'
+        ORDER BY product_id DESC
+    </select>
+
+    <select id="findAllProducts" resultType="com.buildenough.logistics.product.ProductDto">
         SELECT
             product_id AS productId,
             product_code AS productCode,

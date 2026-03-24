@@ -7,7 +7,10 @@ import java.util.List;
 
 @Mapper
 public interface ProductMapper {
-    List<ProductDto> findAll();
+    //List<ProductDto> findAll();
+
+    List<ProductDto> findActiveProducts();
+    List<ProductDto> findAllProducts();
 
     ProductDto findById(Integer productId);
 

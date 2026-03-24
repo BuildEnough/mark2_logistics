@@ -10,8 +10,16 @@ import java.util.List;
 public class ProductService {
     private final ProductMapper productMapper;
 
+//    public List<ProductDto> getProducts() {
+//        return productMapper.findAll();
+//    }
+
     public List<ProductDto> getProducts() {
-        return productMapper.findAll();
+        return productMapper.findActiveProducts();
+    }
+
+    public List<ProductDto> getAllProducts() {
+        return productMapper.findAllProducts();
     }
 
     public ProductDto getProductById(Integer productId) {
